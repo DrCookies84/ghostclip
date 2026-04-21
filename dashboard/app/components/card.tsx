@@ -12,7 +12,7 @@ export function Card({ title, tag, children }: CardProps) {
       {(title || tag) && (
         <div className="mb-5">
           {tag && (
-            <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--cyan)] mb-1.5">
+            <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--cyan)] mb-1.5">
               {tag}
             </p>
           )}

@@ -14,7 +14,7 @@ export default function StudioPage() {
       <div>
         <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--cyan)] mb-1">// studio</p>
         <h1 className="text-2xl font-bold text-[var(--text-primary)]">Create a clip</h1>
-        <p className="text-sm text-[var(--text-secondary)] mt-1">
+        <p className="text-base text-[var(--text-secondary)] mt-1">
           Pick a template, upload source material, let CLIP handle the rest.
         </p>
       </div>
@@ -39,7 +39,7 @@ export default function StudioPage() {
               className="text-left p-4 rounded transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               style={{ background: 'var(--bg-2)', border: '1px solid var(--border-subtle)' }}
             >
-              <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--cyan)] mb-1">
+              <div className="font-mono text-[11px] uppercase tracking-widest text-[var(--cyan)] mb-1">
                 {t.id}
               </div>
               <div className="text-sm font-semibold text-[var(--text-primary)]">{t.name}</div>

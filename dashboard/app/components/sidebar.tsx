@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -19,11 +20,20 @@ export function Sidebar() {
       style={{ background: 'var(--bg-2)', borderRight: '1px solid var(--border-subtle)' }}
     >
       <div className="mb-10">
-        <p className="font-mono text-[10px] uppercase tracking-widest text-[var(--cyan)] mb-1">
+        <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--cyan)] mb-2">
           // ghostclip v0.1
         </p>
-        <h1 className="text-xl font-bold text-[var(--text-primary)]">GhostClip</h1>
-        <p className="font-mono text-[10px] text-[var(--text-dim)] mt-1">
+        <div className="flex justify-center my-3">
+          <Image
+            src="/ghostclip-logo.png"
+            alt="GhostClip"
+            width={637}
+            height={392}
+            priority
+            className="h-32 w-auto"
+          />
+        </div>
+        <p className="font-mono text-[11px] text-[var(--text-dim)] mt-2">
           Agent: <span className="text-[var(--cyan)]">CLIP</span> · <span style={{ color: 'var(--text-dim)' }}>offline</span>
         </p>
       </div>
@@ -42,8 +52,16 @@ export function Sidebar() {
               }}
             >
               <div className="flex items-baseline justify-between">
-                <span className="text-sm text-[var(--text-primary)]">{item.label}</span>
-                <span className="font-mono text-[9px] uppercase tracking-widest text-[var(--text-dim)]">
+                <span
+                  className={
+                    active
+                      ? 'text-lg font-bold text-[var(--cyan)]'
+                      : 'text-base font-medium text-[var(--text-primary)]'
+                  }
+                >
+                  {item.label}
+                </span>
+                <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--text-secondary)]">
                   {item.tag}
                 </span>
               </div>

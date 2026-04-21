@@ -12,7 +12,7 @@ export default function QueuePage() {
       <div>
         <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--cyan)] mb-1">// queue</p>
         <h1 className="text-2xl font-bold text-[var(--text-primary)]">Scheduled posts</h1>
-        <p className="text-sm text-[var(--text-secondary)] mt-1">
+        <p className="text-base text-[var(--text-secondary)] mt-1">
           3 slots per day, Mexico time. CLIP fills them; you approve before publish.
         </p>
       </div>
