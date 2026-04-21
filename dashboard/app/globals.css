@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyan:            #00BCE3;
+  --cyan-bright:     #22D3F5;
+  --cyan-dim:        #0891A8;
+  --cyan-glow:       rgba(0, 188, 227, 0.15);
+  --cyan-glow-strong: rgba(0, 188, 227, 0.35);
+
+  --bg-1: #050810;
+  --bg-2: #0A0F17;
+  --bg-3: #111824;
+
+  --border-subtle:  rgba(0, 188, 227, 0.08);
+  --border-default: rgba(0, 188, 227, 0.15);
+
+  --text-primary:   #E8EDF2;
+  --text-secondary: #8A9BB0;
+  --text-dim:       #5A6A7A;
+
+  --amber:   #F59E0B;
+  --crimson: #DC2626;
+  --green:   #10B981;
+}
+
+html, body {
+  background: var(--bg-1);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Carbon-fiber texture overlay — subtle, fixed, behind all content */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(135deg, rgba(0, 188, 227, 0.015) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 0 1px, transparent 1px 3px);
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-2); }
+::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan-dim); }
+
+.glass-card {
+  background: linear-gradient(180deg, var(--bg-3) 0%, var(--bg-2) 100%);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  transition: border-color 200ms, box-shadow 200ms;
+}
+.glass-card:hover {
+  border-color: var(--cyan-dim);
+  box-shadow: 0 0 40px var(--cyan-glow);
+}
