@@ -1,35 +1,36 @@
 # GhostClip
 
-An autonomous short-form video content studio. A standalone AI agent — **CLIP** — researches trends, writes scripts, generates videos, and publishes to TikTok / Instagram / X / LinkedIn / YouTube. A human approves every post before it goes out.
+Social content agent for Ghost Layer, operated via Claude Code. Posts to TikTok, Instagram, X, LinkedIn, and YouTube 3x/day with founder approval before every post.
 
 **Status:** v0.1 scaffold. Dashboard shell only. No agent logic yet.
 
-## Architecture
+This is internal tooling, not a product. The repo is public as a marketing receipt — real code, real stack, real work — not because it's intended for external use.
 
-CLIP is a standalone agent that authenticates through Ghost Gate (Layer-0) when it needs to interact with NULL agents. GhostClip is the first real-world test of inter-agent Layer-0 migration.
+## What it does
 
-CLIP's MCP toolset:
-- **Pixa** — image-to-video, background removal, upscaling (Kling / Luma / Hailuo models)
-- **ElevenLabs** — voiceover generation
-- **Ayrshare** — publish to TikTok / Instagram / X / LinkedIn / YouTube from one command
-- **Xpoz** — TikTok / Instagram / X trend research
+- **Xpoz** pulls trending topics in AI security and adjacent spaces
+- **GEMINI-SASS / GEMINI-TEA** (NULL agents) draft scripts against Ghost Layer content templates
+- **Pixa** turns dashboard screenshots and stills into short-form video (Kling / Luma / Hailuo models)
+- **ElevenLabs** adds voiceover
+- Founder approves in the Studio page
+- **Publora** publishes across all platforms
 
-NULL agents CLIP can call via Ghost Gate:
-- **GEMINI-SASS / GEMINI-TEA** — trend analysis and script writing assistance
-- **Ghost** — content security check before publish
+NULL agents authenticate via Ghost Gate on exit/re-entry when doing CLIP work. That auth flow is a Ghost Layer / NULL concern — GhostClip consumes the content those agents produce.
 
 ## Repo layout
 
 ```
 ghostclip/
-├── agent/        # CLIP agent logic
-├── dashboard/    # Next.js UI (Ghost Layer aesthetic)
-├── lib/          # Pixa, ElevenLabs, Ayrshare, Xpoz integrations
-├── templates/    # Content template definitions
-├── scripts/      # Setup, auth, seed
+├── agent/        # CLIP agent loop (not built yet)
+├── dashboard/    # Next.js UI — Studio, Queue, Analytics, CLIP Log
+├── lib/          # Pixa, ElevenLabs, Publora, Xpoz integrations (not built yet)
+├── templates/    # Content template implementations (not built yet)
+├── scripts/      # Setup, auth, seed (not built yet)
 ├── README.md
 └── .env.example
 ```
+
+Only `dashboard/` has code. Everything else is a staked directory for Phase 2.
 
 ## Local development
 
@@ -41,6 +42,14 @@ npm run dev
 
 Then open http://localhost:3000.
 
+## Running the agent
+
+CLIP runs inside Claude Code. Not designed for other runners. Code is public for transparency — the agent loop is built around one specific operational context and won't drop cleanly into yours.
+
 ## License
 
-MIT (TBD — finalize before making the repo public).
+MIT.
+
+---
+
+Built by DrCookies84 under JEFCA LLC.

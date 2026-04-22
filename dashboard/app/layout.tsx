@@ -5,8 +5,8 @@ import { Sidebar } from './components/sidebar';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'GhostClip',
-  description: 'Autonomous short-form video content studio powered by CLIP.',
+  title: 'GhostClip — Ghost Layer social content agent',
+  description: 'Social content agent for Ghost Layer, operated via Claude Code.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
