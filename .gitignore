@@ -37,3 +37,6 @@ Thumbs.db
 .clip/
 *.tmp
 *.pid
+
+# Local test data — never for repo
+test-assets/
