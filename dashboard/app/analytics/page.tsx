@@ -15,7 +15,7 @@ export default function AnalyticsPage() {
         <p className="font-mono text-[11px] uppercase tracking-widest text-[var(--cyan)] mb-1">// analytics</p>
         <h1 className="text-2xl font-bold text-[var(--text-primary)]">Performance</h1>
         <p className="text-base text-[var(--text-secondary)] mt-1">
-          Pulled from Ayrshare per platform. Wired in phase 3.
+          Pulled from Publora per platform. Wired in phase 3.
         </p>
       </div>
 
